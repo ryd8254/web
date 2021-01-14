@@ -1,0 +1,12 @@
+
+
+
+태그
+<ol : ordered list : 리스트의 순서를 표현>
+<ul : unordered list : 리스트를 구분기호로 표현>
+<a : anchor 링크>
+<a href : a, hypertext + reference>
+
+<input type="checkbox"> : 체크박스 만들기
+
+Disqus, LiveRe - 댓글기능 추가 가능
