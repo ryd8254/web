@@ -1,12 +1,15 @@
-
-
-
-태그
+--태그--
+기본 구성 : <!doctype html><html><head><title></title></head><body></body></html>
+<p> : 단락을 표현
+<h1> ~ <h6> : 크기별 6단계로 제목을 표현할 수 있고 자동으로 줄바꿈을 한다.
 <ol : ordered list : 리스트의 순서를 표현>
 <ul : unordered list : 리스트를 구분기호로 표현>
 <a : anchor 링크>
 <a href : a, hypertext + reference>
-
 <input type="checkbox"> : 체크박스 만들기
 
+
+--사이트--
 Disqus, LiveRe - 댓글기능 추가 가능
+tawk.to - 채팅 기능 추가 가능
+구글 analytics : 방문자 분석기능 추가 가능
