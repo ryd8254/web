@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <style type="text/css">
+            .myRed {width: 100px; height: 100px; background: red; position: absolute; top:50px; left: 50px; animation: slide .7s linear 2s infinite alternate;}
+            .myBlack {width: 100px; height: 100px; background: black; position: absolute; top: 60px; left: 60px; z-index: 2;}
+            .myImage {width: 300px; height: 300px; position: absolute; top: 300px; left: 50px; animation: back 4s ease-in 2s infinite alternate; background-repeat: no-repeat;}
+            @keyframes slide{
+                0%{z-index:3;};
+                99.9%{z-index:3;}
+                100%{z-index:0;}
+            }
+            @keyframes back{
+                0%{background-image: url(https://i.pinimg.com/736x/de/2e/d4/de2ed41befd4611dadd08180e17642f9--so-cute-very-cute-baby.jpg);}
+                33%{background-image: url(https://www.bengalcats.co/wp-content/uploads/2017/03/cute-open-ring-kitty-cat-03-200x200.jpg);}
+                66%{background-image: url(https://i.pinimg.com/736x/1c/d7/9e/1cd79eeca8ed2d0ceab601b0e4ad7417--so-cute-funny-stuff.jpg);}
+                100%{background-image: url(https://i.pinimg.com/736x/46/9e/4f/469e4f74015956a45b68313de5c95e33--funny-dog-names-cute-puppy-names.jpg);}
+            }
+        </style>
+    </head>
+    <body>
+        <div class="myRed"></div>
+        <div class="myBlack"></div>
+        <div class="myImage"></div>
+    </body>
+</html>
