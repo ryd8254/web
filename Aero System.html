@@ -18,6 +18,69 @@
             a{
                 text-align: center;
             }
+            
+            .cursor {
+                width : 40px;
+                height: 40px;
+                border:1px solid pink;
+                border-radius : 50%;
+                position :absolute;
+                transition-duration: 200ms;
+                transition-timing-function: ease-out;
+                animation: cursorAnim .5s infinite alternate;
+
+            }
+/* 
+            .cursor::after{
+                content:"abc";
+                width:40px;
+                height: 40px;
+                position : absolute;
+                border : 8px solid grey;
+                border-radius: 50%;
+                opacity: .5;
+                top : -8px;
+                left : -8px;
+                animation : cursorAnim2 .5s infinite alternate;
+            } */
+
+
+            @keyframes cursorAnim{
+                from{
+                    transition : scale(1);
+                }
+                to{
+                    transform : scale(.7);
+                }
+            }
+            @keyframes cursorAnim2{
+                from{
+                    transition : scale(1);
+                }
+                to{
+                    transform : scale(.4);
+                }
+            }
+
+            @keyframes cursorAnim3{
+                0% {
+                    transition : scale(1);
+                }
+                50% {
+                    transform : scale(2);
+                }
+                100% {
+                    transform : scale(1);
+                    opacity: 0;
+                }
+            }
+
+
+
+            .expand {
+                animation : cursorAnim3 .5s forwards;
+                border : 1px solid blue;
+            }
         </style>
     </head>
     <body>
@@ -45,6 +108,22 @@
         <br><br><br>
         <footer>제작자:류연동</footer>
     </body>
+    <footer><img class="cursor" src = "custom.png"> </footer>
+    <script>
+        const cursor = document.querySelector('.cursor');
+    
+        document.addEventListener('mousemove', e => {
+            cursor.setAttribute("style", "top : " + (e.pageY) + "px; left : " + (e.pageX) +"px")
+        })
+    
+        document.addEventListener('click', () => {
+            cursor.classList.add("expand");
+    
+            setTimeout(() => {
+                cursor.classList.remove("expand");
+            }, 500)
+        })
+    </script>
 </html>
 
 
