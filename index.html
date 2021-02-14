@@ -6,9 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel = "stylesheet" href="css/main.css">
+    
+    <style>
+        body{
+            background-image: url('cursor.gif'); background-repeat: no-repeat;
+        }
+    </style>
+
 </head>
 <body>
-    <input type ="button" style="text-align: center; margin-top: 25%; margin-left : 50%; padding : 10px;" value = "click" onclick="
+    <div>
+    <input type ="button" style="text-align: center; margin-top: 20%; margin-left : 50%; padding : 10px;" value = "click" onclick="
         var i;
         if (this.value === 'click') { i = 0; this.value = 'clicked('+i+')'; this.style.backgroundColor = 'black'; this.style.color = 'white';}
         else {
@@ -24,6 +32,7 @@
         
         
     ">
+    </div>
 
 </body>
 <footer><img class="cursor" src = "custom.png"> </footer>
