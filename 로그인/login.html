@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+    <!--커서 부분-->
+    <link rel = "stylesheet" href="cursor.css">
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CBUMS-로그인</title>
     <style ></style>
     <link href="style.css" rel="stylesheet" type="text/css"/>
     <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -12,7 +15,7 @@
 <body>
     <section class = "login-form">
         <h1>씨부엉</h1>
-        <form acation="">
+        <form method="" action="">
             <div class = "int-area">
                 <input type = "text" name = "id" id = "id"
                 autocomplete = "off" required>
@@ -25,52 +28,62 @@
             </div>
             <div class = "btn-area">
                 <button type = "submit" onclick ="
-                let id = $('#id');
-                let pw = $('#pw');
-                let btn = $('#btn');
-        
-                if($(id).val() == '') {
-                    $(id).next('label').addClass('warning');
-                    setTimeout(function(){
-                        $('label').removeClass('warning')
-                    },1500)
-                }
-                else if ($(pw).val() == ''){
-                    $(pw).next('label').addClass('warning');
-                    setTimeout(function(){
-                        $('label').removeClass('warning')
-                    },1500)
-                }
+                    let id = $('#id');
+                    let pw = $('#pw');
+                    let btn = $('#btn');
+                    var login_status;
+                    if($(id).val() == '') {
+                        $(id).next('label').addClass('warning');
+                        setTimeout(function(){
+                            $('label').removeClass('warning')
+                        },1500)
+                    }
+                    else if ($(pw).val() == ''){
+                        $(pw).next('label').addClass('warning');
+                        setTimeout(function(){
+                            $('label').removeClass('warning')
+                        },1500)
+                    }
+
+                    if($(id).val() == $(pw).val() && $(id).val() != ''){
+                        alert('Login succeeded');
+                        res.end('hi');
+                    }
+                    else{alertln('Login Failed.')}
+                    ">Login
                     
-                
-                ">Login</button>
+                </button>
             </div>
             <div class = "caption">
-                <a href = "">비밀번호 찾기</a>
+                <a href = "find.html">비밀번호 찾기</a>
+                
             </div>
         </form>
     </section>
 
-    <script>
-        let id = $('#id');
-        let pw = $('#pw');
-        let btn = $('#btn');
-
-        $(btn).on('click', function() {
-            if($(id).val() == ""){
-                $(id).next('label').addClass('warning');
-                setTimeout(function(){
-                    $('label').removeClass('warning')
-                },1500)
-            }
-            else if ($(pw).val() == ""){
-                $(pw).next('label').addClass('warning');
-                setTimeout(function(){
-                    $('label').removeClass('warning')
-                },1500)
-            }
-        });
-    </script>
-    
+    <!--커서 부분-->
+    <img class="cursor" src = "custom.png">
 </body>
+<footer style ="position:absolute; bottom:0; text-align: center;">
+    <div style ="color : white ; size : 15px; z-index: auto;">
+        footer
+    </div>
+</footer>
+
+<!--커서 부분-->
+<script>
+    const cursor = document.querySelector('.cursor');
+
+    document.addEventListener('mousemove', e => {
+        cursor.setAttribute("style", "top : " + (e.pageY) + "px; left : " + (e.pageX) +"px")
+    })
+
+    document.addEventListener('click', () => {
+        cursor.classList.add("expand");
+
+        setTimeout(() => {
+            cursor.classList.remove("expand");
+        }, 500)
+    })
+</script>
 </html>
